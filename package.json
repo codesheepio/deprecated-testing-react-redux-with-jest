@@ -2,16 +2,24 @@
   "name": "testing-react-redux",
   "version": "1.0.0",
   "description": "",
+  "author": "CodeSheep Team",
+  "license": "ISC",
   "main": "src/index.js",
   "scripts": {
     "dev": "node server.js",
     "build": "webpack",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test": "jest"
   },
-  "author": "CodeSheep Team",
-  "license": "ISC",
+  "jest": {
+    "verbose": true,
+    "moduleNameMapper": {
+      "\\.css$": "identity-obj-proxy"
+    }
+  },
   "devDependencies": {
+    "@kadira/storybook": "^2.21.0",
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
@@ -19,19 +27,23 @@
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-0": "^6.22.0",
     "css-loader": "^0.26.2",
+    "enzyme": "^2.7.1",
+    "enzyme-to-json": "^1.5.0",
     "eslint": "^3.9.1",
     "eslint-config-airbnb": "^12.0.0",
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.6.0",
     "express": "^4.14.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^19.0.2",
     "path": "^0.12.7",
+    "react-addons-test-utils": "^15.4.2",
     "react-hot-loader": "^3.0.0-beta.6",
     "style-loader": "^0.13.2",
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.10.1",
-    "webpack-hot-middleware": "^2.17.1",
-    "@kadira/storybook": "^2.21.0"
+    "webpack-hot-middleware": "^2.17.1"
   },
   "dependencies": {
     "react": "^15.3.2",

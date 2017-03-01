@@ -3,14 +3,15 @@
     "node": true,
     "browser": true,
     "es6": true,
+    "jest": true
   },
   "extends": "airbnb",
   "plugins": [
-    "import",
+    "import"
   ],
   "rules": {
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "react/require-extension": "off",
-    "semi": ["error", "never"],
+    "semi": ["error", "never"]
   }
 }
