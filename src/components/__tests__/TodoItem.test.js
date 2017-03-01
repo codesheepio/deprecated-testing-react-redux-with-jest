@@ -4,27 +4,29 @@ import toJson from 'enzyme-to-json' // eslint-disable-line import/no-extraneous-
 import TodoItem from '../TodoItem'
 
 describe('TodoItem', () => {
-  it('matches its snapshot - not complete', () => {
-    const wrapper = shallow(<TodoItem text="Drink coffee" />)
+  let wrapper
 
+  beforeEach(() => {
+    wrapper = shallow(<TodoItem text="Drink coffee" />)
+  })
+
+  it('matches its snapshot - not complete', () => {
     expect(toJson(wrapper)).toMatchSnapshot()
   })
 
   it('matches its snapshot - complete', () => {
-    const wrapper = shallow(<TodoItem text="Drink coffee" complete />)
+    wrapper.setProps({ complete: true })
 
     expect(toJson(wrapper)).toMatchSnapshot()
   })
 
   it('contains one <li> with text from props', () => {
-    const wrapper = shallow(<TodoItem text="Drink coffee" />)
-
     expect(wrapper.find('li').length).toBe(1)
     expect(wrapper.find('li').at(0).text()).toEqual('Drink coffee')
   })
 
   it('has complete className if receiving complete from props', () => {
-    const wrapper = shallow(<TodoItem text="Drink coffee" complete />)
+    wrapper.setProps({ complete: true })
 
     expect(wrapper.find('li').at(0).hasClass('complete')).toBe(true)
   })
