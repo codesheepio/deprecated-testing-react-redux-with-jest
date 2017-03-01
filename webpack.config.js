@@ -1,5 +1,5 @@
 const path = require('path')
-const webpack = require('webpack')
+const webpack = require('webpack') // eslint-disable-line import/no-extraneous-dependencies
 
 module.exports = {
   devtool: 'eval-source-map',
@@ -21,7 +21,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader'],
+        loaders: ['style-loader', 'css-loader?modules'],
       },
     ],
   },
