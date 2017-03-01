@@ -15,4 +15,11 @@ describe('TodoItem', () => {
 
     expect(toJson(wrapper)).toMatchSnapshot()
   })
+
+  it('contains one <li> with text from props', () => {
+    const wrapper = shallow(<TodoItem text="Drink coffee" />)
+
+    expect(wrapper.find('li').length).toBe(1)
+    expect(wrapper.find('li').at(0).text()).toEqual('Drink coffee')
+  })
 })
