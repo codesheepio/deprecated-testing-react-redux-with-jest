@@ -28,4 +28,13 @@ describe('NewTodo', () => {
     expect(wrapper.find('button').first().hasClass('btn'))
     expect(wrapper.find('button').first().hasClass('btn-primary'))
   })
+
+  it('changes state when typing', () => {
+    wrapper.find('input').simulate('change', {
+      target: {
+        value: 'Hello',
+      },
+    })
+    expect(wrapper.state('text')).toBe('Hello')
+  })
 })
