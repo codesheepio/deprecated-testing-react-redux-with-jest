@@ -15,8 +15,6 @@ describe('NewTodo', () => {
   })
 
   it('matches its snapshot', () => {
-    wrapper = shallow(<NewTodo />)
-
     expect(toJson(wrapper)).toMatchSnapshot()
   })
 
@@ -36,5 +34,11 @@ describe('NewTodo', () => {
       },
     })
     expect(wrapper.state('text')).toBe('Hello')
+  })
+
+  it('calls props.addTodo when clicking Add button', () => {
+    wrapper.setState({ text: 'Hello' })
+    wrapper.find('button').simulate('click')
+    expect(props.addTodo).toHaveBeenCalledWith('Hello')
   })
 })

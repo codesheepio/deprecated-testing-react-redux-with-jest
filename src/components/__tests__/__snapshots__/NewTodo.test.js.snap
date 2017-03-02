@@ -10,6 +10,7 @@ exports[`NewTodo matches its snapshot 1`] = `
   />
   <button
     className="btn"
+    onClick={[Function]}
   >
     Add
   </button>
